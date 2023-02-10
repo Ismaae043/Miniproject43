@@ -11,7 +11,8 @@ $sql = "INSERT INTO tbl_customers (S_Name , S_LastName , S_Address , S_SunjectNa
 if ($conn->query($sql)) 
 {
 echo "New record created successfully";
-header('location:index.php'); //กลับไปยังหน้าตาราง
+echo "<script>window.location.href='lukka.php'</script>";
+header('location:lukka.php'); //กลับไปยังหน้าตาราง
 } 
 else 
 {

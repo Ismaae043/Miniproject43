@@ -1,3 +1,13 @@
+<?php session_start();
+include('connection.php');
+$ID = $_SESSION['a_id'];
+$name = $_SESSION['a_username'];
+$level = $_SESSION['a_level'];
+if($level!='A'){
+Header("Location:logout.php");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,31 +20,30 @@
 <body>
     
     <div class="container">
-        <a href="index.php" class="btn btn-primary mt-3">Go Back</a>
-        <hr>
-        <h1 class="mt-5">เพิ่มข้อมูล</h1>
-        <hr>
-<div class="mb-3">
+       
+        <h1 class="mt-5">เพิ่มข้อมูลลูกค้า</h1>
+        
+    <div class="mb-3">
 
  <div class="mb-3">
  <form action="create.php" method="post">
-        <label for="Name" class="form-label">Name</label>
+        <label for="Name" class="form-label">ชื่อ</label>
                 <input type="text" class="form-control" name="S_Name" required>
             </div>
             <div class="mb-3">
-                <label for="LastName" class="form-label">LastName</label>
+                <label for="LastName" class="form-label">นามสกุล</label>
                 <input type="text" class="form-control" name="S_LastName" required>
             </div>
             <div class="mb-3">
-                <label for="Address">Address</label>
-                <input type="S_Address" class="form-control" name="S_Address" required>
+                <label for="Address">ที่อยู่</label>
+                <input type="text" class="form-control" name="S_Address" required>
             </div>
             <div class="mb-3">
-                <label for="SunjectName">SunjectName</label>
+                <label for="SunjectName">รายวิชา</label>
         <input type="text" class="form-control" name="S_SunjectName" required>
  </div>
 
  
- <button type="submit">Create</button>
- <a class="btn" href="index.php">Back</a>
+ <button type="submit" class="btn btn-success" >Create</button>
+ <a class="btn" href="lukka.php">Back</a>
 </form>
